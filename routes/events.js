@@ -11,10 +11,9 @@ const { check } = require("express-validator");
 const { fieldValidators } = require("../middlewares/fieldValidators");
 const { isDate } = require("../helpers/isDate");
 
+router.get("/", getEvent);
 // todas las peticiones debajo de esta, deben validar token
 router.use(validateJwt);
-
-router.get("/", getEvent);
 
 router.post(
   "/",
